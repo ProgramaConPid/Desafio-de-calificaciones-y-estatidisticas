@@ -6,7 +6,7 @@
 
 print("")
 try:
-  # Entrada: Solicitar nombre y calificacion al usuario
+  # Entrada: Solicitar nombre del usuario para una experiencia mas personalizada
   user_name = str(input("Ingresa tu nombre: ")).capitalize()
 
   # Validacion: Verificar que el usuario ingrese un nombre valido.
@@ -15,9 +15,10 @@ try:
     user_name = error_name
     print("------------------------------------------")
 
-  
+  # Entrada: Solicitar apellido
   user_last_name = str(input("Ingresa tu Apellido: ")).capitalize()
   
+  # Validacion: Verificar que el usuario ingrese un apellido valido
   while not user_last_name.isalpha():
     error_last_name = str(input("ERROR, Ingresa un apellido valido: ")) 
     user_last_name = error_last_name
@@ -32,9 +33,10 @@ try:
   if user_note < 0 or user_note > 100:
     print(f"La calificacion {user_note} no se encuentra en el rango especificado.") 
   else:
-    # Validacion: Verificar y determinar el estado de aprobacion 
-    print("A continuacion veras los datos ingresado y el estado de aporbacion. \n")
 
+    print("A continuacion veras los datos ingresados y el estado de aprobacion. \n")
+
+    # Validacion: Si el usuario aprobo se mostraran sus datos, calificacion y estado  
     if user_note >= 50:
       
       data = {
@@ -84,22 +86,25 @@ try:
     amount_grades = error_amount
     print("---------------------------------------------")
 
+  # Separador
   print("")
   
-  # Indicacion: Se le indicara al usuario la cantidad de notas que va a ingresar
+  # Indicacion - Adicional: Se le indicara al usuario la cantidad de notas que va a ingresar
   print(f"* A continuacion ingresaras {amount_grades} calificaciones * \n")
 
   for i in range(amount_grades):
     calificacion = float(input(f"Ingresa la calificacion #{i+1}: "))
     print("----------------------------------------------")
   
+    # Validacion: Si la calificacion no se encuentra en el rango especificado se dara un error
     if calificacion < 1 or calificacion > 100:
       print("Ingresaste una calificacion erronea.")
       break
     else:
+      # Adicion: Si la calificacion es valida, la agregara a la lista de calificaciones
       grades.append(calificacion)
 
-  
+  # Separador
   print("")
 
   print(f"Las calificaciones ingresadas fueron: {grades}")
@@ -109,6 +114,7 @@ try:
   for grade in grades:
     total = int(total + grade)
 
+  # Promedio: Obtener el promedio segun las calificaciones ingresadas
   average = total / len(grades)
   print(f"El promedio que obtuviste segun las calificaciones ingresadas es: {average}")
 
