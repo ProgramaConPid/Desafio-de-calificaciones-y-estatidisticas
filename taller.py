@@ -43,9 +43,10 @@ try:
     # Indicacion
     print("A continuacion veras los datos ingresados y el estado de aprobacion. \n")
 
-    # Validacion: Si el usuario aprobo se mostraran sus datos, calificacion y estado  
+    # Validacion: Si el usuario aprobo se mostraran sus datos, calificacion y estado.  
     if user_note >= 50:
       
+      # Asignacion: Se modifica el diccionario previamente creado y se le asignan los respectivos valores ingresados por el usuario.
       data = {
         "Nombre usuario": user_name,
         "Apellido usuario": user_last_name,
@@ -53,6 +54,7 @@ try:
         "Estado": "Aprobado"
       }
       
+      # Salida: Se le muestra al usuario los datos ingresados previamente.
       print(f"""
         Nombre usuario => {data['Nombre usuario']} {data["Apellido usuario"]}  
         Calificacion ingresada => {data['Calificacion ingresada']}
@@ -60,6 +62,8 @@ try:
       \n""")
       
     else:
+      
+      # Asignacion
       data = {
         "Nombre usuario": user_name,
         "Apellido usuario": user_last_name,
@@ -68,6 +72,7 @@ try:
         "Mensaje motivacional": "La proxima vez te ira mejor."
       }
       
+      # Salida: Se le muestra al usuario los datos ingresados previamente.
       print(f"""
         Nombre usuario => {data['Nombre usuario']} {data["Apellido usuario"]}  
         Calificacion ingresada => {data['Calificacion ingresada']}
@@ -109,7 +114,7 @@ try:
     while grade < 1 or grade > 100:
       error_grade = float(input(f"* ERROR, Ingresa nuevamente la calificacion #{i+1}: "))
       grade = error_grade
-      print("--------------------------------------------------")
+      print("---------------------------------------------------")
       
     grades.append(grade)
 
